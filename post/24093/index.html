@@ -1,0 +1,648 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小米8探索版 | 百万瓦小金库</title><meta name="description" content="小米8探索版  开发版&#x2F;内测版       miui_MI8Explorer_20.6.18_ca6f4fac3d_10.0.zip   miui_MI8Explorer_20.6.17_fc373ddb5e_10.0.zip   miui_MI8Explorer_20.6.16_7d084bd37b_10.0.zip   miui_MI8Explorer_20.6.15_9d97ce147"><meta name="keywords" content="MIUI12开发板"><meta name="author" content="MiniGG"><meta name="copyright" content="MiniGG"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://miui.minigg.cn/post/24093/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="小米8探索版"><meta property="og:url" content="https://miui.minigg.cn/post/24093/"><meta property="og:site_name" content="百万瓦小金库"><meta property="og:description" content="小米8探索版  开发版&#x2F;内测版       miui_MI8Explorer_20.6.18_ca6f4fac3d_10.0.zip   miui_MI8Explorer_20.6.17_fc373ddb5e_10.0.zip   miui_MI8Explorer_20.6.16_7d084bd37b_10.0.zip   miui_MI8Explorer_20.6.15_9d97ce147"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-06-23T14:30:11.000Z"><meta property="article:modified_time" content="2020-06-23T14:30:11.140Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="小米8屏幕指纹版" href="https://miui.minigg.cn/post/9159/"><link rel="next" title="小米8青春版" href="https://miui.minigg.cn/post/55228/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/06/18/ie8LPG4qxkbcsKm.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 其他版本</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/develop/"><i class="fa-fw fas fa-music"></i><span> 开发版</span></a></li><li><a class="site-page" href="/stable/"><i class="fa-fw fas fa-video"></i><span> 稳定版</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">百万瓦小金库</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 其他版本</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/develop/"><i class="fa-fw fas fa-music"></i><span> 开发版</span></a></li><li><a class="site-page" href="/stable/"><i class="fa-fw fas fa-video"></i><span> 稳定版</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">小米8探索版</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-06-23 22:30:11"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-06-23</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 22:30:11"><i class="fas fa-history fa-fw"></i> 更新于 2020-06-23</span></time></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><table>
+<thead>
+<tr>
+<th>小米8探索版  开发版/内测版</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a id="more"></a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.18/miui_MI8Explorer_20.6.18_ca6f4fac3d_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.18_ca6f4fac3d_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.17/miui_MI8Explorer_20.6.17_fc373ddb5e_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.17_fc373ddb5e_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.16/miui_MI8Explorer_20.6.16_7d084bd37b_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.16_7d084bd37b_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.15/miui_MI8Explorer_20.6.15_9d97ce1471_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.15_9d97ce1471_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.11/miui_MI8Explorer_20.6.11_1bffefda00_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.11_1bffefda00_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.10/miui_MI8Explorer_20.6.10_54f436daa8_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.10_54f436daa8_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.9/miui_MI8Explorer_20.6.9_b94397b7e1_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.9_b94397b7e1_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.8/miui_MI8Explorer_20.6.8_dd81e71b51_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.8_dd81e71b51_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.4/miui_MI8Explorer_20.6.4_1beb1d5fa7_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.4_1beb1d5fa7_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.3/miui_MI8Explorer_20.6.3_c360944f48_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.3_c360944f48_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.2/miui_MI8Explorer_20.6.2_46f715337a_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.2_46f715337a_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.1/miui_MI8Explorer_20.6.1_2022fd98f9_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.6.1_2022fd98f9_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.29/miui_MI8Explorer_20.5.29_73a1a27663_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.29_73a1a27663_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.28/miui_MI8Explorer_20.5.28_f0891c672f_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.28_f0891c672f_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.27/miui_MI8Explorer_20.5.27_de35047cc0_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.27_de35047cc0_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.26/miui_MI8Explorer_20.5.26_02c0e2bef4_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.26_02c0e2bef4_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.21/miui_MI8Explorer_20.5.21_87ff37bd92_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.21_87ff37bd92_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.20/miui_MI8Explorer_20.5.20_af8cd5bf84_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.20_af8cd5bf84_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.19/miui_MI8Explorer_20.5.19_de857778ed_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.19_de857778ed_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.18/miui_MI8Explorer_20.5.18_146668c94b_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.18_146668c94b_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.14/miui_MI8Explorer_20.5.14_9a8f8432c5_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.14_9a8f8432c5_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.13/miui_MI8Explorer_20.5.13_76e3f2c9e4_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.13_76e3f2c9e4_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.12/miui_MI8Explorer_20.5.12_071c1ea277_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.12_071c1ea277_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.11/miui_MI8Explorer_20.5.11_d89a405ea4_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.11_d89a405ea4_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.7/miui_MI8Explorer_20.5.7_9e95712bf1_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.7_9e95712bf1_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.6/miui_MI8Explorer_20.5.6_d70eaf397e_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.5.6_d70eaf397e_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.4.30/miui_MI8Explorer_20.4.30_13fdcd9556_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.4.30_13fdcd9556_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.4.27/miui_MI8Explorer_20.4.27_4f86c6bdca_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.4.27_4f86c6bdca_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.26/miui_MI8Explorer_20.3.26_22ea00a9a2_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.26_22ea00a9a2_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.25/miui_MI8Explorer_20.3.25_9b8a2f4cac_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.25_9b8a2f4cac_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.24/miui_MI8Explorer_20.3.24_b9f3c79d05_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.24_b9f3c79d05_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.23/miui_MI8Explorer_20.3.23_5fa6021121_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.23_5fa6021121_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.19/miui_MI8Explorer_20.3.19_1e7e66d028_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.19_1e7e66d028_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.18/miui_MI8Explorer_20.3.18_9abc5451e1_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.18_9abc5451e1_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.17/miui_MI8Explorer_20.3.17_7792334382_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.17_7792334382_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.16/miui_MI8Explorer_20.3.16_ddb7908005_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.16_ddb7908005_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.12/miui_MI8Explorer_20.3.12_81db7b5307_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.12_81db7b5307_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.11/miui_MI8Explorer_20.3.11_f3e9e1ff8d_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.11_f3e9e1ff8d_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.10/miui_MI8Explorer_20.3.10_77836f0d61_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.10_77836f0d61_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.9/miui_MI8Explorer_20.3.9_a39005e028_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.9_a39005e028_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.5/miui_MI8Explorer_20.3.5_b81f7566fe_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.5_b81f7566fe_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.4/miui_MI8Explorer_20.3.4_c2516a686e_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.4_c2516a686e_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.3/miui_MI8Explorer_20.3.3_4d4c89f73e_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.3.3_4d4c89f73e_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.2.27/miui_MI8Explorer_20.2.27_bea75f7dcf_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.2.27_bea75f7dcf_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.2.25/miui_MI8Explorer_20.2.25_a6cc11a015_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.2.25_a6cc11a015_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.21/miui_MI8Explorer_20.1.21_d931e6ab0a_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.21_d931e6ab0a_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.16/miui_MI8Explorer_20.1.16_3231ca6229_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.16_3231ca6229_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.15/miui_MI8Explorer_20.1.15_321b8d4279_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.15_321b8d4279_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.14/miui_MI8Explorer_20.1.14_0dd62667ee_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.14_0dd62667ee_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.13/miui_MI8Explorer_20.1.13_a07daaad21_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.13_a07daaad21_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.9/miui_MI8Explorer_20.1.9_2fd1c4db45_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.9_2fd1c4db45_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.8/miui_MI8Explorer_20.1.8_e3bd4d1083_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.8_e3bd4d1083_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.7/miui_MI8Explorer_20.1.7_97aad9f6cd_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.7_97aad9f6cd_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.2/miui_MI8Explorer_20.1.2_8558f0115c_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_20.1.2_8558f0115c_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.26/miui_MI8Explorer_9.12.26_c3f4a2031c_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.26_c3f4a2031c_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.25/miui_MI8Explorer_9.12.25_8f7bb08a48_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.25_8f7bb08a48_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.24/miui_MI8Explorer_9.12.24_eaab06ef41_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.24_eaab06ef41_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.23/miui_MI8Explorer_9.12.23_89e9f72e75_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.23_89e9f72e75_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.19/miui_MI8Explorer_9.12.19_d1a062d881_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.19_d1a062d881_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.17/miui_MI8Explorer_9.12.17_af6e56cc46_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.17_af6e56cc46_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.12/miui_MI8Explorer_9.12.12_6ded2fff1f_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.12_6ded2fff1f_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.11/miui_MI8Explorer_9.12.11_66079004fd_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.11_66079004fd_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.10/miui_MI8Explorer_9.12.10_0cd7acd8d6_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.10_0cd7acd8d6_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.9/miui_MI8Explorer_9.12.9_a85fdb65db_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.9_a85fdb65db_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.5/miui_MI8Explorer_9.12.5_0e6c3faec8_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.12.5_0e6c3faec8_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.28/miui_MI8Explorer_9.11.28_5d9368ad71_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.28_5d9368ad71_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.26/miui_MI8Explorer_9.11.26_00ef1e7910_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.26_00ef1e7910_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.25/miui_MI8Explorer_9.11.25_3390d9ab99_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.25_3390d9ab99_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.21/miui_MI8Explorer_9.11.21_a3165409dd_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.21_a3165409dd_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.20/miui_MI8Explorer_9.11.20_48cb0eb8a9_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.20_48cb0eb8a9_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.19/miui_MI8Explorer_9.11.19_eff23e3714_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.19_eff23e3714_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.13/miui_MI8Explorer_9.11.13_77654d79f3_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.13_77654d79f3_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.12/miui_MI8Explorer_9.11.12_772dcd0b4f_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.12_772dcd0b4f_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.11/miui_MI8Explorer_9.11.11_df2ffadfe1_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.11_df2ffadfe1_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.7/miui_MI8Explorer_9.11.7_28bfac4637_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.7_28bfac4637_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.6/miui_MI8Explorer_9.11.6_4ccd8b499e_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.6_4ccd8b499e_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.5/miui_MI8Explorer_9.11.5_4c24484bc3_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.5_4c24484bc3_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.4/miui_MI8Explorer_9.11.4_e7d5f4c720_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.11.4_e7d5f4c720_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.31/miui_MI8Explorer_9.10.31_7e18a1be1a_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.31_7e18a1be1a_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.30/miui_MI8Explorer_9.10.30_c44cb426c1_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.30_c44cb426c1_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.29/miui_MI8Explorer_9.10.29_2d9e50aa6f_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.29_2d9e50aa6f_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.28/miui_MI8Explorer_9.10.28_6b9ad2cb37_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.28_6b9ad2cb37_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.24/miui_MI8Explorer_9.10.24_a0239a8519_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.24_a0239a8519_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.23/miui_MI8Explorer_9.10.23_ca54f32ed5_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.23_ca54f32ed5_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.21/miui_MI8Explorer_9.10.21_c27ea86345_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.21_c27ea86345_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.17/miui_MI8Explorer_9.10.17_b789476bda_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.17_b789476bda_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.16/miui_MI8Explorer_9.10.16_fd39dc41e5_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.16_fd39dc41e5_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.11/miui_MI8Explorer_9.10.11_4c56f38c36_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.11_4c56f38c36_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.10/miui_MI8Explorer_9.10.10_827a043b26_10.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.10.10_827a043b26_10.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.26/miui_MI8Explorer_9.9.26_308dfca23f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.9.26_308dfca23f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.25/miui_MI8Explorer_9.9.25_d17a688e66_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.9.25_d17a688e66_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.24/miui_MI8Explorer_9.9.24_97de2e87ef_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.9.24_97de2e87ef_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.3/miui_MI8Explorer_9.9.3_38cd89d21c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.9.3_38cd89d21c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.29/miui_MI8Explorer_9.8.29_b9a1a514d4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.29_b9a1a514d4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.28/miui_MI8Explorer_9.8.28_082766877f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.28_082766877f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.22/miui_MI8Explorer_9.8.22_fb647a25b9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.22_fb647a25b9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.20/miui_MI8Explorer_9.8.20_84acff6210_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.20_84acff6210_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.19/miui_MI8Explorer_9.8.19_22c461a81f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.19_22c461a81f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.15/miui_MI8Explorer_9.8.15_503e9c0959_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.15_503e9c0959_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.14/miui_MI8Explorer_9.8.14_a6fa4e8cb4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.14_a6fa4e8cb4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.13/miui_MI8Explorer_9.8.13_05b0bd5c17_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.13_05b0bd5c17_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.12/miui_MI8Explorer_9.8.12_4c891caf23_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.12_4c891caf23_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.9/miui_MI8Explorer_9.8.9_268ea266d5_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.9_268ea266d5_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.8/miui_MI8Explorer_9.8.8_873d0c91a8_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.8_873d0c91a8_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.7/miui_MI8Explorer_9.8.7_c7330a4408_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.7_c7330a4408_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.6/miui_MI8Explorer_9.8.6_25c219e0ed_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.6_25c219e0ed_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.5/miui_MI8Explorer_9.8.5_3a70a3d16c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.5_3a70a3d16c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.1/miui_MI8Explorer_9.8.1_e5d64ca15b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.8.1_e5d64ca15b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.31/miui_MI8Explorer_9.7.31_ca9299ab08_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.31_ca9299ab08_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.30/miui_MI8Explorer_9.7.30_0f146f3318_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.30_0f146f3318_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.29/miui_MI8Explorer_9.7.29_b182e6176c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.29_b182e6176c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.25/miui_MI8Explorer_9.7.25_152c166bfd_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.25_152c166bfd_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.24/miui_MI8Explorer_9.7.24_f566acc364_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.24_f566acc364_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.18/miui_MI8Explorer_9.7.18_7c3839e2af_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.18_7c3839e2af_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.17/miui_MI8Explorer_9.7.17_8bcd63d7d9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.17_8bcd63d7d9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.16/miui_MI8Explorer_9.7.16_5a654f7762_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.16_5a654f7762_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.11/miui_MI8Explorer_9.7.11_d36dc5b63f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.11_d36dc5b63f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.10/miui_MI8Explorer_9.7.10_af2e3888ed_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.10_af2e3888ed_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.4/miui_MI8Explorer_9.7.4_43a327d85a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.7.4_43a327d85a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.27/miui_MI8Explorer_9.6.27_901f91faa5_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.6.27_901f91faa5_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.20/miui_MI8Explorer_9.6.20_794aa47fe4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.6.20_794aa47fe4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.19/miui_MI8Explorer_9.6.19_33350f83ec_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.6.19_33350f83ec_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.13/miui_MI8Explorer_9.6.13_d8a5e41970_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.6.13_d8a5e41970_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.11/miui_MI8Explorer_9.6.11_a58f82aa99_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.6.11_a58f82aa99_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.10/miui_MI8Explorer_9.6.10_49b8f59ae9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.6.10_49b8f59ae9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.5/miui_MI8Explorer_9.6.5_aa1843b48a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.6.5_aa1843b48a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.31/miui_MI8Explorer_9.5.31_2013cd1b18_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.31_2013cd1b18_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.29/miui_MI8Explorer_9.5.29_68f4b0fdcf_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.29_68f4b0fdcf_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.22/miui_MI8Explorer_9.5.22_137972c770_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.22_137972c770_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.16/miui_MI8Explorer_9.5.16_8261eee2ec_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.16_8261eee2ec_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.15/miui_MI8Explorer_9.5.15_31e260d837_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.15_31e260d837_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.14/miui_MI8Explorer_9.5.14_a3d4dba50c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.14_a3d4dba50c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.13/miui_MI8Explorer_9.5.13_4611f34e1a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.13_4611f34e1a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.9/miui_MI8Explorer_9.5.9_b7a70ac645_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.9_b7a70ac645_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.8/miui_MI8Explorer_9.5.8_06b614dd2b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.8_06b614dd2b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.6/miui_MI8Explorer_9.5.6_6059b4384f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.5.6_6059b4384f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.26/miui_MI8Explorer_9.4.26_40dfc8ae36_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.26_40dfc8ae36_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.25/miui_MI8Explorer_9.4.25_d6c472b2ae_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.25_d6c472b2ae_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.23/miui_MI8Explorer_9.4.23_fda7c99ca5_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.23_fda7c99ca5_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.18/miui_MI8Explorer_9.4.18_a20778e266_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.18_a20778e266_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.16/miui_MI8Explorer_9.4.16_4e159559f2_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.16_4e159559f2_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.12/miui_MI8Explorer_9.4.12_15cdd6c7c4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.12_15cdd6c7c4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.11/miui_MI8Explorer_9.4.11_bf81cc6318_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.11_bf81cc6318_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.10/miui_MI8Explorer_9.4.10_a1ab7dcc01_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.10_a1ab7dcc01_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.9/miui_MI8Explorer_9.4.9_0391eadd22_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.9_0391eadd22_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.8/miui_MI8Explorer_9.4.8_bb906f4a30_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.8_bb906f4a30_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.3/miui_MI8Explorer_9.4.3_cb50d13def_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.3_cb50d13def_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.1/miui_MI8Explorer_9.4.1_046b4c7475_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.4.1_046b4c7475_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.28/miui_MI8Explorer_9.3.28_4a4dfc5d0a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.28_4a4dfc5d0a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.27/miui_MI8Explorer_9.3.27_c01eae488e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.27_c01eae488e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.26/miui_MI8Explorer_9.3.26_9fd8b49cdb_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.26_9fd8b49cdb_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.25/miui_MI8Explorer_9.3.25_204e927c4f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.25_204e927c4f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.21/miui_MI8Explorer_9.3.21_2ba5147356_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.21_2ba5147356_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.20/miui_MI8Explorer_9.3.20_539c6a5059_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.20_539c6a5059_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.19/miui_MI8Explorer_9.3.19_e1bc0d0cdb_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.19_e1bc0d0cdb_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.18/miui_MI8Explorer_9.3.18_373915e081_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.18_373915e081_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.14/miui_MI8Explorer_9.3.14_244b2a3db9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.14_244b2a3db9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.12/miui_MI8Explorer_9.3.12_914aa9f351_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.12_914aa9f351_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.11/miui_MI8Explorer_9.3.11_a1089be108_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.11_a1089be108_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.7/miui_MI8Explorer_9.3.7_de966a3fa2_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.7_de966a3fa2_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.6/miui_MI8Explorer_9.3.6_470b3d7327_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.6_470b3d7327_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.5/miui_MI8Explorer_9.3.5_517922d186_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.5_517922d186_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.4/miui_MI8Explorer_9.3.4_4bbf1ce738_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.4_4bbf1ce738_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.1/miui_MI8Explorer_9.3.1_448733f02d_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.3.1_448733f02d_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.27/miui_MI8Explorer_9.2.27_77e3d053ed_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.27_77e3d053ed_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.26/miui_MI8Explorer_9.2.26_7a003743a0_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.26_7a003743a0_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.25/miui_MI8Explorer_9.2.25_9e335b46b5_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.25_9e335b46b5_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.21/miui_MI8Explorer_9.2.21_a008fd3387_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.21_a008fd3387_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.20/miui_MI8Explorer_9.2.20_4a6a363dc7_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.20_4a6a363dc7_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.19/miui_MI8Explorer_9.2.19_0052bda546_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.19_0052bda546_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.18/miui_MI8Explorer_9.2.18_07d17782d2_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.18_07d17782d2_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.14/miui_MI8Explorer_9.2.14_8af7a271ca_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.14_8af7a271ca_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.12/miui_MI8Explorer_9.2.12_72739fc5d9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.2.12_72739fc5d9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.24/miui_MI8Explorer_9.1.24_31510d0ca0_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.1.24_31510d0ca0_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.23/miui_MI8Explorer_9.1.23_d1d0bc87b6_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.1.23_d1d0bc87b6_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.22/miui_MI8Explorer_9.1.22_ddddaae7db_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.1.22_ddddaae7db_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.21/miui_MI8Explorer_9.1.21_7a0b37e3c2_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.1.21_7a0b37e3c2_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.17/miui_MI8Explorer_9.1.17_d0ec43e4eb_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.1.17_d0ec43e4eb_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.16/miui_MI8Explorer_9.1.16_27dc05b36e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.1.16_27dc05b36e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.15/miui_MI8Explorer_9.1.15_972f6ddda8_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MI8Explorer_9.1.15_972f6ddda8_9.0.zip</a></td>
+</tr>
+</tbody></table>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">MiniGG</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://miui.minigg.cn/post/24093/">https://miui.minigg.cn/post/24093/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://miui.minigg.cn" target="_blank">百万瓦小金库</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MIUI12%E5%BC%80%E5%8F%91%E6%9D%BF/">MIUI12开发板</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/9159/"><img class="prev-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">小米8屏幕指纹版</div></div></a></div><div class="next-post pull-right"><a href="/post/55228/"><img class="next-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">小米8青春版</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/post/51863/" title="小米10"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米10</div></div></a></div><div class="relatedPosts_item"><a href="/post/53635/" title="小米10Pro"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米10Pro</div></div></a></div><div class="relatedPosts_item"><a href="/post/26140/" title="小米10青春版"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米10青春版</div></div></a></div><div class="relatedPosts_item"><a href="/post/37992/" title="小米6"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米6</div></div></a></div><div class="relatedPosts_item"><a href="/post/5268/" title="小米6X"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米6X</div></div></a></div><div class="relatedPosts_item"><a href="/post/20713/" title="小米8"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米8</div></div></a></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By MiniGG</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script></body></html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小米MIX2 | 百万瓦小金库</title><meta name="description" content="小米MIX2  开发版&#x2F;内测版       miui_MIMIX2_20.6.18_7235eadecf_9.0.zip   miui_MIMIX2_20.6.17_534512947c_9.0.zip   miui_MIMIX2_20.6.16_670836b838_9.0.zip   miui_MIMIX2_20.6.15_cb9cfd43ad_9.0.zip   miui_MIMIX2"><meta name="keywords" content="MIUI12开发板"><meta name="author" content="MiniGG"><meta name="copyright" content="MiniGG"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://miui.minigg.cn/post/15260/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="小米MIX2"><meta property="og:url" content="https://miui.minigg.cn/post/15260/"><meta property="og:site_name" content="百万瓦小金库"><meta property="og:description" content="小米MIX2  开发版&#x2F;内测版       miui_MIMIX2_20.6.18_7235eadecf_9.0.zip   miui_MIMIX2_20.6.17_534512947c_9.0.zip   miui_MIMIX2_20.6.16_670836b838_9.0.zip   miui_MIMIX2_20.6.15_cb9cfd43ad_9.0.zip   miui_MIMIX2"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-06-23T14:30:11.000Z"><meta property="article:modified_time" content="2020-06-23T14:30:11.144Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="小米9SE" href="https://miui.minigg.cn/post/28643/"><link rel="next" title="小米MIX2S" href="https://miui.minigg.cn/post/21627/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/06/18/ie8LPG4qxkbcsKm.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 其他版本</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/develop/"><i class="fa-fw fas fa-music"></i><span> 开发版</span></a></li><li><a class="site-page" href="/stable/"><i class="fa-fw fas fa-video"></i><span> 稳定版</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">百万瓦小金库</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 其他版本</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/develop/"><i class="fa-fw fas fa-music"></i><span> 开发版</span></a></li><li><a class="site-page" href="/stable/"><i class="fa-fw fas fa-video"></i><span> 稳定版</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">小米MIX2</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-06-23 22:30:11"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-06-23</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 22:30:11"><i class="fas fa-history fa-fw"></i> 更新于 2020-06-23</span></time></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><table>
+<thead>
+<tr>
+<th>小米MIX2  开发版/内测版</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a id="more"></a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.18/miui_MIMIX2_20.6.18_7235eadecf_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.18_7235eadecf_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.17/miui_MIMIX2_20.6.17_534512947c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.17_534512947c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.16/miui_MIMIX2_20.6.16_670836b838_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.16_670836b838_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.15/miui_MIMIX2_20.6.15_cb9cfd43ad_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.15_cb9cfd43ad_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.11/miui_MIMIX2_20.6.11_62839b6d99_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.11_62839b6d99_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.10/miui_MIMIX2_20.6.10_94ef7f7899_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.10_94ef7f7899_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.9/miui_MIMIX2_20.6.9_dd8da27d2b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.9_dd8da27d2b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.8/miui_MIMIX2_20.6.8_ab2e414561_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.8_ab2e414561_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.4/miui_MIMIX2_20.6.4_17e30485f9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.4_17e30485f9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.3/miui_MIMIX2_20.6.3_fd65c67a47_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.3_fd65c67a47_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.2/miui_MIMIX2_20.6.2_8021d101e6_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.2_8021d101e6_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.6.1/miui_MIMIX2_20.6.1_818b083de4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.6.1_818b083de4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.28/miui_MIMIX2_20.5.28_9f76172252_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.28_9f76172252_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.26/miui_MIMIX2_20.5.26_301e3b1a3d_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.26_301e3b1a3d_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.25/miui_MIMIX2_20.5.25_08b1c6c95b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.25_08b1c6c95b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.21/miui_MIMIX2_20.5.21_2d06027f58_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.21_2d06027f58_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.20/miui_MIMIX2_20.5.20_be65cd085a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.20_be65cd085a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.19/miui_MIMIX2_20.5.19_d3c18bd925_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.19_d3c18bd925_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.18/miui_MIMIX2_20.5.18_77b4f45894_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.18_77b4f45894_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.15/miui_MIMIX2_20.5.15_578a211e01_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.15_578a211e01_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.14/miui_MIMIX2_20.5.14_0ffdcaffcf_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.14_0ffdcaffcf_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.13/miui_MIMIX2_20.5.13_5b259b071a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.13_5b259b071a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.12/miui_MIMIX2_20.5.12_30264eb915_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.12_30264eb915_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.11/miui_MIMIX2_20.5.11_4304f69676_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.11_4304f69676_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.7/miui_MIMIX2_20.5.7_abf798b3c9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.7_abf798b3c9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.5.6/miui_MIMIX2_20.5.6_caa9ad029a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.5.6_caa9ad029a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.4.30/miui_MIMIX2_20.4.30_2666fd1274_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.4.30_2666fd1274_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.4.29/miui_MIMIX2_20.4.29_b95ccaecce_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.4.29_b95ccaecce_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.4.28/miui_MIMIX2_20.4.28_f429737df9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.4.28_f429737df9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.4.27/miui_MIMIX2_20.4.27_4fbd9fa9c8_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.4.27_4fbd9fa9c8_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.26/miui_MIMIX2_20.3.26_e4902f8afc_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.26_e4902f8afc_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.25/miui_MIMIX2_20.3.25_18bd08e002_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.25_18bd08e002_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.24/miui_MIMIX2_20.3.24_6bc0668848_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.24_6bc0668848_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.23/miui_MIMIX2_20.3.23_cd8b265c8f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.23_cd8b265c8f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.19/miui_MIMIX2_20.3.19_5d71c8aece_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.19_5d71c8aece_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.18/miui_MIMIX2_20.3.18_fbd49f0c6b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.18_fbd49f0c6b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.17/miui_MIMIX2_20.3.17_4cd5f2195f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.17_4cd5f2195f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.16/miui_MIMIX2_20.3.16_c09d369b25_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.16_c09d369b25_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.12/miui_MIMIX2_20.3.12_3e896a45e0_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.12_3e896a45e0_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.11/miui_MIMIX2_20.3.11_b51043e1a0_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.11_b51043e1a0_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.10/miui_MIMIX2_20.3.10_b757cff134_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.10_b757cff134_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.9/miui_MIMIX2_20.3.9_9e3acf9b04_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.9_9e3acf9b04_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.5/miui_MIMIX2_20.3.5_c0d564c66e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.5_c0d564c66e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.3/miui_MIMIX2_20.3.3_8be87e11a8_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.3_8be87e11a8_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.3.2/miui_MIMIX2_20.3.2_5e1635f836_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.3.2_5e1635f836_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.2.27/miui_MIMIX2_20.2.27_24a45296b1_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.2.27_24a45296b1_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.2.26/miui_MIMIX2_20.2.26_199681f6c7_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.2.26_199681f6c7_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.2.25/miui_MIMIX2_20.2.25_b8e780885e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.2.25_b8e780885e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.16/miui_MIMIX2_20.1.16_989bfafa58_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.16_989bfafa58_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.15/miui_MIMIX2_20.1.15_6f03ae1556_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.15_6f03ae1556_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.14/miui_MIMIX2_20.1.14_cc3cd80626_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.14_cc3cd80626_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.13/miui_MIMIX2_20.1.13_97ba26900d_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.13_97ba26900d_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.9/miui_MIMIX2_20.1.9_f7e5694dbd_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.9_f7e5694dbd_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.8/miui_MIMIX2_20.1.8_e3f8f79c61_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.8_e3f8f79c61_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.7/miui_MIMIX2_20.1.7_6b310e5e38_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.7_6b310e5e38_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.6/miui_MIMIX2_20.1.6_2cf31ed906_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.6_2cf31ed906_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/20.1.2/miui_MIMIX2_20.1.2_7289e6be23_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_20.1.2_7289e6be23_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.31/miui_MIMIX2_9.12.31_c79202b37d_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.31_c79202b37d_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.30/miui_MIMIX2_9.12.30_e915537b63_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.30_e915537b63_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.26/miui_MIMIX2_9.12.26_064ba1b6bb_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.26_064ba1b6bb_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.25/miui_MIMIX2_9.12.25_bcfb325ebe_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.25_bcfb325ebe_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.24/miui_MIMIX2_9.12.24_e265123d2e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.24_e265123d2e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.23/miui_MIMIX2_9.12.23_6ef9be2d3f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.23_6ef9be2d3f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.19/miui_MIMIX2_9.12.19_c410af960f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.19_c410af960f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.18/miui_MIMIX2_9.12.18_97552b667e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.18_97552b667e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.17/miui_MIMIX2_9.12.17_f796271309_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.17_f796271309_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.16/miui_MIMIX2_9.12.16_a661e56c52_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.16_a661e56c52_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.12/miui_MIMIX2_9.12.12_701db34c6e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.12_701db34c6e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.11/miui_MIMIX2_9.12.11_8885fb8baa_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.11_8885fb8baa_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.10/miui_MIMIX2_9.12.10_495ad78616_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.10_495ad78616_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.9/miui_MIMIX2_9.12.9_fa3bab6e75_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.9_fa3bab6e75_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.5/miui_MIMIX2_9.12.5_c6cde99218_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.5_c6cde99218_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.4/miui_MIMIX2_9.12.4_01aeb0e277_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.4_01aeb0e277_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.3/miui_MIMIX2_9.12.3_617355069e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.3_617355069e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.12.2/miui_MIMIX2_9.12.2_c9978fcdfd_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.12.2_c9978fcdfd_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.28/miui_MIMIX2_9.11.28_329b9448f0_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.28_329b9448f0_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.27/miui_MIMIX2_9.11.27_3c4a171a6f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.27_3c4a171a6f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.26/miui_MIMIX2_9.11.26_14abcde3ff_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.26_14abcde3ff_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.25/miui_MIMIX2_9.11.25_a047999eb3_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.25_a047999eb3_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.21/miui_MIMIX2_9.11.21_1eb5c32f84_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.21_1eb5c32f84_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.20/miui_MIMIX2_9.11.20_c76294d8c9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.20_c76294d8c9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.19/miui_MIMIX2_9.11.19_c9aabba031_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.19_c9aabba031_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.18/miui_MIMIX2_9.11.18_30f54b4ca6_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.18_30f54b4ca6_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.14/miui_MIMIX2_9.11.14_477bc3e5e8_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.14_477bc3e5e8_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.13/miui_MIMIX2_9.11.13_0334720f54_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.13_0334720f54_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.12/miui_MIMIX2_9.11.12_c5019e869b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.12_c5019e869b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.11/miui_MIMIX2_9.11.11_98526777dd_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.11_98526777dd_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.7/miui_MIMIX2_9.11.7_e9bf53bf17_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.7_e9bf53bf17_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.6/miui_MIMIX2_9.11.6_4f449c15f4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.6_4f449c15f4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.5/miui_MIMIX2_9.11.5_e65b0a0fb4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.5_e65b0a0fb4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.11.4/miui_MIMIX2_9.11.4_067edfdf18_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.11.4_067edfdf18_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.31/miui_MIMIX2_9.10.31_9b2feb93b2_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.31_9b2feb93b2_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.30/miui_MIMIX2_9.10.30_a31e25de0b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.30_a31e25de0b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.29/miui_MIMIX2_9.10.29_269f6b1c4b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.29_269f6b1c4b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.28/miui_MIMIX2_9.10.28_046427c8b3_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.28_046427c8b3_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.24/miui_MIMIX2_9.10.24_3cd0559ad7_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.24_3cd0559ad7_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.23/miui_MIMIX2_9.10.23_a7e95a53a0_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.23_a7e95a53a0_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.21/miui_MIMIX2_9.10.21_f9401755e9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.21_f9401755e9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.17/miui_MIMIX2_9.10.17_83da7d1c11_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.17_83da7d1c11_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.16/miui_MIMIX2_9.10.16_83f8735007_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.16_83f8735007_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.15/miui_MIMIX2_9.10.15_dfebda5921_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.15_dfebda5921_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.14/miui_MIMIX2_9.10.14_b0de85cd4a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.14_b0de85cd4a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.10/miui_MIMIX2_9.10.10_a778f836ce_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.10_a778f836ce_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.9/miui_MIMIX2_9.10.9_85c6d12461_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.9_85c6d12461_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.10.8/miui_MIMIX2_9.10.8_94ad1baba3_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.10.8_94ad1baba3_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.26/miui_MIMIX2_9.9.26_906253ee45_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.9.26_906253ee45_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.25/miui_MIMIX2_9.9.25_6f92723811_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.9.25_6f92723811_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.24/miui_MIMIX2_9.9.24_20b0f6bbb7_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.9.24_20b0f6bbb7_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.10/miui_MIMIX2_9.9.10_fc636904f3_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.9.10_fc636904f3_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.9/miui_MIMIX2_9.9.9_f623a4a656_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.9.9_f623a4a656_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.9.3/miui_MIMIX2_9.9.3_a85d90587c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.9.3_a85d90587c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.29/miui_MIMIX2_9.8.29_d58a113e35_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.29_d58a113e35_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.28/miui_MIMIX2_9.8.28_b9ec4efb2a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.28_b9ec4efb2a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.27/miui_MIMIX2_9.8.27_c07678ad15_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.27_c07678ad15_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.26/miui_MIMIX2_9.8.26_8c1d79d791_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.26_8c1d79d791_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.22/miui_MIMIX2_9.8.22_ccacb98443_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.22_ccacb98443_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.21/miui_MIMIX2_9.8.21_51a9eeac40_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.21_51a9eeac40_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.20/miui_MIMIX2_9.8.20_ac5d0d2c91_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.20_ac5d0d2c91_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.19/miui_MIMIX2_9.8.19_71e13f2398_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.19_71e13f2398_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.15/miui_MIMIX2_9.8.15_3bc6203966_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.15_3bc6203966_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.14/miui_MIMIX2_9.8.14_97581363ef_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.14_97581363ef_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.13/miui_MIMIX2_9.8.13_111225a6a4_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.13_111225a6a4_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.12/miui_MIMIX2_9.8.12_a5d18afc57_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.12_a5d18afc57_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.9/miui_MIMIX2_9.8.9_6393d7b509_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.9_6393d7b509_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.8/miui_MIMIX2_9.8.8_27d678eaa0_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.8_27d678eaa0_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.7/miui_MIMIX2_9.8.7_ece7eb6907_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.7_ece7eb6907_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.6/miui_MIMIX2_9.8.6_0bb0959cec_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.6_0bb0959cec_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.5/miui_MIMIX2_9.8.5_99f92f7c2b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.5_99f92f7c2b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.8.1/miui_MIMIX2_9.8.1_8d993fe286_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.8.1_8d993fe286_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.31/miui_MIMIX2_9.7.31_a27d9f28a5_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.31_a27d9f28a5_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.30/miui_MIMIX2_9.7.30_b5fb1ee37e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.30_b5fb1ee37e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.29/miui_MIMIX2_9.7.29_acb3e23dc5_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.29_acb3e23dc5_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.25/miui_MIMIX2_9.7.25_f2c77fc810_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.25_f2c77fc810_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.24/miui_MIMIX2_9.7.24_6651de9f5f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.24_6651de9f5f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.23/miui_MIMIX2_9.7.23_ca95ced2cb_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.23_ca95ced2cb_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.22/miui_MIMIX2_9.7.22_e4663f1ac2_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.22_e4663f1ac2_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.18/miui_MIMIX2_9.7.18_c99c7fe63c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.18_c99c7fe63c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.17/miui_MIMIX2_9.7.17_0b6f08756e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.17_0b6f08756e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.16/miui_MIMIX2_9.7.16_55c21e016f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.16_55c21e016f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.15/miui_MIMIX2_9.7.15_8820a19f43_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.15_8820a19f43_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.11/miui_MIMIX2_9.7.11_4cf4494e2b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.11_4cf4494e2b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.10/miui_MIMIX2_9.7.10_333278c9ff_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.10_333278c9ff_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.9/miui_MIMIX2_9.7.9_f14a6d9a71_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.9_f14a6d9a71_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.8/miui_MIMIX2_9.7.8_bc53b41246_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.8_bc53b41246_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.4/miui_MIMIX2_9.7.4_d8730107db_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.4_d8730107db_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.3/miui_MIMIX2_9.7.3_a5c8ebcd42_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.3_a5c8ebcd42_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.2/miui_MIMIX2_9.7.2_88e8bcbba9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.2_88e8bcbba9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.7.1/miui_MIMIX2_9.7.1_8d04cd0445_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.7.1_8d04cd0445_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.27/miui_MIMIX2_9.6.27_4103ca026c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.27_4103ca026c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.26/miui_MIMIX2_9.6.26_0c16e1179f_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.26_0c16e1179f_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.25/miui_MIMIX2_9.6.25_3f281255e9_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.25_3f281255e9_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.24/miui_MIMIX2_9.6.24_3b488ec283_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.24_3b488ec283_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.20/miui_MIMIX2_9.6.20_41b006986d_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.20_41b006986d_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.19/miui_MIMIX2_9.6.19_6955db2015_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.19_6955db2015_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.18/miui_MIMIX2_9.6.18_7f56b43c0c_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.18_7f56b43c0c_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.17/miui_MIMIX2_9.6.17_842db91512_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.17_842db91512_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.13/miui_MIMIX2_9.6.13_5769a611ef_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.13_5769a611ef_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.12/miui_MIMIX2_9.6.12_3c76fd8f81_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.12_3c76fd8f81_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.11/miui_MIMIX2_9.6.11_1a5d50a29e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.11_1a5d50a29e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.10/miui_MIMIX2_9.6.10_8bb189776e_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.10_8bb189776e_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.4/miui_MIMIX2_9.6.4_b36af0cb57_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.4_b36af0cb57_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.6.3/miui_MIMIX2_9.6.3_7560c24175_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.6.3_7560c24175_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.29/miui_MIMIX2_9.5.29_4d3c39df06_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.29_4d3c39df06_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.23/miui_MIMIX2_9.5.23_f0756ba4fb_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.23_f0756ba4fb_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.22/miui_MIMIX2_9.5.22_c47e32585a_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.22_c47e32585a_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.20/miui_MIMIX2_9.5.20_bc8d1a2805_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.20_bc8d1a2805_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.16/miui_MIMIX2_9.5.16_db2051ea00_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.16_db2051ea00_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.15/miui_MIMIX2_9.5.15_6761e6e0a3_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.15_6761e6e0a3_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.14/miui_MIMIX2_9.5.14_e413368f77_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.14_e413368f77_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.13/miui_MIMIX2_9.5.13_4a0b6bad9b_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.13_4a0b6bad9b_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.9/miui_MIMIX2_9.5.9_5a5f9c3558_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.9_5a5f9c3558_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.5.8/miui_MIMIX2_9.5.8_636cb0a751_9.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.5.8_636cb0a751_9.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.25/miui_MIMIX2_9.4.25_0c1c7d0004_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.4.25_0c1c7d0004_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.24/miui_MIMIX2_9.4.24_258a865c81_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.4.24_258a865c81_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.11/miui_MIMIX2_9.4.11_9a2293a359_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.4.11_9a2293a359_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.9/miui_MIMIX2_9.4.9_6d1db565a1_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.4.9_6d1db565a1_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.4.1/miui_MIMIX2_9.4.1_841ae754c9_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.4.1_841ae754c9_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.27/miui_MIMIX2_9.3.27_bc6c8d4f53_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.3.27_bc6c8d4f53_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.14/miui_MIMIX2_9.3.14_4bbdb7bfa0_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.3.14_4bbdb7bfa0_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.3.7/miui_MIMIX2_9.3.7_d97f866a8b_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.3.7_d97f866a8b_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.28/miui_MIMIX2_9.2.28_35ade5eb0b_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.2.28_35ade5eb0b_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.2.11/miui_MIMIX2_9.2.11_6d4a8957b5_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.2.11_6d4a8957b5_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.24/miui_MIMIX2_9.1.24_4d26c1b6ec_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.1.24_4d26c1b6ec_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.23/miui_MIMIX2_9.1.23_eabd479e9a_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.1.23_eabd479e9a_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.22/miui_MIMIX2_9.1.22_b1beff39e2_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.1.22_b1beff39e2_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.17/miui_MIMIX2_9.1.17_f4eef118e5_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.1.17_f4eef118e5_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.16/miui_MIMIX2_9.1.16_fa9cc7062d_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.1.16_fa9cc7062d_8.0.zip</a></td>
+</tr>
+<tr>
+<td><a href="https://hugeota.d.miui.com/9.1.15/miui_MIMIX2_9.1.15_801d346219_8.0.zip" target="_blank" rel="noopener external nofollow noreferrer">miui_MIMIX2_9.1.15_801d346219_8.0.zip</a></td>
+</tr>
+</tbody></table>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">MiniGG</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://miui.minigg.cn/post/15260/">https://miui.minigg.cn/post/15260/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://miui.minigg.cn" target="_blank">百万瓦小金库</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MIUI12%E5%BC%80%E5%8F%91%E6%9D%BF/">MIUI12开发板</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/28643/"><img class="prev-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">小米9SE</div></div></a></div><div class="next-post pull-right"><a href="/post/21627/"><img class="next-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">小米MIX2S</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/post/51863/" title="小米10"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米10</div></div></a></div><div class="relatedPosts_item"><a href="/post/53635/" title="小米10Pro"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米10Pro</div></div></a></div><div class="relatedPosts_item"><a href="/post/26140/" title="小米10青春版"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米10青春版</div></div></a></div><div class="relatedPosts_item"><a href="/post/37992/" title="小米6"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米6</div></div></a></div><div class="relatedPosts_item"><a href="/post/5268/" title="小米6X"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米6X</div></div></a></div><div class="relatedPosts_item"><a href="/post/20713/" title="小米8"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-23</div><div class="relatedPosts_title">小米8</div></div></a></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By MiniGG</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script></body></html>
